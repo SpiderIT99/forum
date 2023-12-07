@@ -1,26 +1,26 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider
+} from "react-router-dom";
 import Test from './pages/Test/Test';
 import Home from './pages/Home/Home';
+import RootLayout from './Leyouts/RootLayout/RootLayout';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path='test' element={<Test />} />
+    </Route>
+  )
+)
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <header>
-          <nav>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to="test">Test</NavLink>
-          </nav>
-        </header>
-        <main>
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path='test' element={<Test />} />
-          </Routes>
-        </main>
-      </BrowserRouter>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
