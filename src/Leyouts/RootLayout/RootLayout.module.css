@@ -1,0 +1,39 @@
+.layout{
+    background: var(--Dark2);
+    min-height: 100vh;
+    color: white;
+}
+
+.navBar{
+    background: var(--Dark3);
+    padding: 20px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.page{
+    background: var(--Dark4);
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.login{
+    background-color: var(--Dark3);
+    font-weight: bold;
+}
+
+.contentPage{
+    padding: 20px 40px;
+}
