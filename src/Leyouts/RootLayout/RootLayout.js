@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import styles from './RootLayout.module.css';
 
-export default function RootLeyout() {
+export default function RootLayout() {
     return (
         <div className={styles.layout}>
             <div className={styles.navBar}>
