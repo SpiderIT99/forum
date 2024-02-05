@@ -1,29 +1,53 @@
-import './App.css';
+import "./index.css";
+import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider
-} from "react-router-dom";
-import Login from './pages/Login/Login';
-import Home from './pages/Home/Home';
-import RootLayout from './Layouts/RootLayout/RootLayout';
+  Experimental_CssVarsProvider as CssVarsProvider,
+  experimental_extendTheme as extendTheme,
+} from "@mui/material";
+import { routes } from "./app/routes";
+import { store } from "./app/store";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<RootLayout />}>
-      <Route index element={<Home />} />
-      <Route path='login' element={<Login />} />
-      {/* page2 and page3 for design only, to be changed in the future*/}
-      <Route path='page2' />
-      <Route path='page3' />
-    </Route>
-  )
-)
+const router = createBrowserRouter(routes);
+
+// MUI
+const darkPalette = {
+  mode: "dark",
+  primary: {
+    main: "#98ce90",
+  },
+  secondary: {
+    main: "#bad0b6",
+  },
+};
+const lightPalette = {
+  mode: "light",
+  primary: {
+    main: "#02191e",
+  },
+  secondary: {
+    main: "#548560",
+  },
+};
+
+const theme = extendTheme({
+  colorSchemes: {
+    dark: {
+      palette: darkPalette,
+    },
+    light: {
+      palette: lightPalette,
+    },
+  },
+});
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <CssVarsProvider theme={theme}>
+        <RouterProvider router={router} />
+      </CssVarsProvider>
+    </Provider>
   );
 }
 
