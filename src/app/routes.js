@@ -6,6 +6,8 @@ import { useAppSelector } from "./hooks";
 import Alerts from "../components/Alerts/Alerts";
 import Categories from "../features/categories/views/Categories";
 import Register from "../features/auth/views/Register";
+import PostPage from "../features/PostPage/views/PostPage";
+import CreatePostPage from "../features/createPostPage/views/CreatePostPage";
 
 const ProtectedRoute = ({ redirectPath = "/login" }) => {
   const user = useAppSelector(selectUser);
@@ -46,6 +48,14 @@ export const routes = [
       {
         path: "/categories",
         element: <Categories />,
+      },
+      {
+        path: "/post/:postId",
+        element: <PostPage />,
+      },
+      {
+        path: "/create-post",
+        element: <CreatePostPage />,
       },
     ],
   },
