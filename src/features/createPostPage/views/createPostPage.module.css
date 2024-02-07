@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background: var(--Light2);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text{
+    margin: 15px;
+    color: var(--Secondary);
+}
+
+.input, .textarea {
+    padding: 10px 20px;
+    width: 50%;
+    border: 2px solid var(--Secondary);
+    border-radius: 5px;
+    color: var(--Secondary);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.textarea {
+    margin-bottom: 20px;
+    height: 200px;
+}
+
+.button {
+    padding: 15px 30px;
+    background-color: var(--Secondary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
