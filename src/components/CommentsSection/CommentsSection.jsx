@@ -16,20 +16,23 @@ const CommentArea = ({
 
     return (
         <div className={styles.wrapper}>
-            <div>
+            <div className={styles.text}>Comment Section</div>
+            <div className={styles.add}>
                 <textarea
                     value={newComment}
-                    onChange={handleInputChange}
                     required
+                    onChange={handleInputChange}
                     className={styles.textarea}
                 ></textarea>
-                <button onClick={handleSubmit} className={styles.button}>add comment</button>
+                <div>
+                    <button onClick={handleSubmit} className={styles.button}>Add Comment</button>
+                </div>
             </div>
-            <div className={styles.commentList}>
+            <div>
                 {comments.map((comment, index) => (
-                    <div key={index} className={styles.comment}>
+                    <div key={index}>
                         {editingIndex === index ? (
-                            <div className={styles.commentEdit}>
+                            <div className={styles.comment}>
                                 <input
                                     value={editedComment}
                                     onChange={handleChange}
@@ -41,13 +44,13 @@ const CommentArea = ({
                                 </div>
                             </div>
                         ) : (
-                            <>
-                                <p>{comment}</p>
+                            <div className={styles.comment}>
+                                <div className={styles.textComment}>{comment}</div>
                                 <div className={styles.buttons}>
                                     <button onClick={() => handleEditStart(index, comment)} className={styles.button}>Edit</button>
                                     <button onClick={() => deleteComment(index)} className={styles.button}>Delete</button>
                                 </div>
-                            </>
+                            </div>
                         )}
                     </div>
                 ))}
