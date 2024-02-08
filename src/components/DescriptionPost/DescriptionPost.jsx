@@ -1,4 +1,4 @@
-import styles from './descriptionPost.module.css';
+import styles from './DescriptionPost.module.css';
 
 const TitleDescription = ({ handlePostSave, handlePostCancel, title, description, handleTitleChange, handleDescriptionChange }) => {
     return (
