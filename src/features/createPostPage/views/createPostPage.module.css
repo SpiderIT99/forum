@@ -38,3 +38,8 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.error{
+    color: red;
+    font-weight: bold;
+}
