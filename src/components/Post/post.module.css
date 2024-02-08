@@ -1,0 +1,39 @@
+.wrapper{
+    display: flex;
+    justify-self: center;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
+    border: var(--Secondary) solid 3px;
+    width: 90%;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    padding: 30px;
+    background-color: white;
+}
+.logo{
+    max-height: 100px;
+}
+.topic{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--Dark4);
+}
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.description{
+    font-size: 20px;
+}
+.button{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    background: var(--Secondary);
+    color: white;
+}

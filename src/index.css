@@ -6,6 +6,7 @@
   --Primary: #02191e;
   --Secondary: #548560;
   --Light1: #c0f2cd;
+  --Light2: #f5fcf9;
 }
 
 html {
@@ -32,3 +33,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button{ cursor: pointer;}
