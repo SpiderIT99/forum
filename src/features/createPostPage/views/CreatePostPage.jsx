@@ -6,9 +6,15 @@ const CreatePostPage = () => {
     const navigate = useNavigate();
     const [editedTitle, setTitle] = useState('');
     const [editedDescription, setDescription] = useState('');
+    const [isAlert, setAlert] = useState(false);
 
     const savePost = () => {
-        navigate('/');
+        if (editedTitle === '' || editedDescription === '') {
+            setAlert(true);
+        }
+        else {
+            navigate('/')
+        }
     };
 
     return (
@@ -29,6 +35,7 @@ const CreatePostPage = () => {
             <div>
                 <button className={styles.button} onClick={savePost}>Save</button>
             </div>
+            {isAlert ? (<p className={styles.error}>you need to give a title and description!</p>) : <></>}
         </div>
     );
 };
