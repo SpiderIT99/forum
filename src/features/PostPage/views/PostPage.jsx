@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './postPage.module.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import PostView from '../../../components/PostView/PostView';
-import TitleDescription from '../../../components/TitleDescription/TitleDescription';
+import DescriptionPost from '../../../components/DescriptionPost/DescriptionPost.jsx';
 import CommentsSection from '../../../components/CommentsSection/CommentsSection.jsx';
 
 const PostPage = () => {
@@ -110,7 +110,7 @@ const PostPage = () => {
     return (
         <div className={styles.wrapper}>
             {isEditingPost ? (
-                <TitleDescription
+                <DescriptionPost
                     title={editedTitle}
                     description={editedDescription}
                     handleTitleChange={handleTitleChange}
