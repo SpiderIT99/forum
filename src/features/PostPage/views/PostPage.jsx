@@ -119,28 +119,28 @@ const PostPage = () => {
                     handlePostSave={handlePostSave}
                 />
             ) : (
-                <PostView
-                    title={editedTitle}
-                    description={editedDescription}
-                    isEditing={isEditingPost}
-                    handlePostEdit={handlePostEdit}
-                    handleDeletePost={handleDeletePost}
-                />
+                <div>
+                    <PostView
+                        title={editedTitle}
+                        description={editedDescription}
+                        isEditing={isEditingPost}
+                        handlePostEdit={handlePostEdit}
+                        handleDeletePost={handleDeletePost}
+                    />
+                    <CommentsSection
+                        comments={comments}
+                        deleteComment={deleteComment}
+                        editingIndex={editingIndex}
+                        editedComment={editedComment}
+                        handleEditStart={handleEditStart}
+                        handleEditCancel={handleEditCancel}
+                        handleEditSave={handleEditSave}
+                        handleChange={handleChange}
+                        handleInputChange={handleInputChange}
+                        handleSubmit={handleSubmit}
+                    />
+                </div>
             )}
-
-            <CommentsSection
-                comments={comments}
-                deleteComment={deleteComment}
-                editingIndex={editingIndex}
-                editedComment={editedComment}
-                handleEditStart={handleEditStart}
-                handleEditCancel={handleEditCancel}
-                handleEditSave={handleEditSave}
-                handleChange={handleChange}
-                handleInputChange={handleInputChange}
-                handleSubmit={handleSubmit}
-            />
-
             {isAlert ? (<p className={styles.error}>you can't save an empty field!</p>) : <></>}
         </div>
     );

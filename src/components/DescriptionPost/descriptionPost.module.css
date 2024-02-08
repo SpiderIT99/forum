@@ -9,15 +9,22 @@
     font-weight: bold;
 }
 
-.title, .description {
-    color: var(--Secondary);
-    font-size: 30px;
-    font-weight: bold;
+.input, .textarea {
     margin-bottom: 20px;
+    padding: 10px 20px;
+    width: 50%;
+    border: 2px solid var(--Secondary);
+    border-radius: 5px;
+    color: var(--Secondary);
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.title{
-    font-size: 50px;
+.textarea {
+    max-height: 200px;
+    min-height: 200px;
+    max-width: 50%;
+    min-width: 50%;
 }
 
 .buttons{

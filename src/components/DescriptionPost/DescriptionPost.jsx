@@ -1,8 +1,9 @@
-import styles from './DescriptionPost.module.css';
+import styles from './descriptionPost.module.css';
 
 const TitleDescription = ({ handlePostSave, handlePostCancel, title, description, handleTitleChange, handleDescriptionChange }) => {
     return (
         <div className={styles.wrapper}>
+            
             <input
                 type="text"
                 value={title}

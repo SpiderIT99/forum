@@ -1,0 +1,78 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background: var(--Light2);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.add{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.input, .textarea {
+    padding: 10px 20px;
+    width: 35%;
+    border: 2px solid var(--Secondary);
+    border-radius: 5px;
+    color: var(--Secondary);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.textarea {
+    margin-bottom: 20px;
+    max-height: 80px;
+    min-height: 80px;
+    max-width: 50%;
+    min-width: 50%;
+}
+
+.input{
+    margin: 10px;
+}
+
+.text, .textComment {
+    color: var(--Secondary);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+} 
+
+.text{
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 15px 30px;
+    background-color: var(--Secondary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
