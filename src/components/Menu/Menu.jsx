@@ -1,18 +1,15 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
-import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import MenuMUI from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import useSignOut from "../../features/auth/hooks/useSignOut";
 import logo from "../../assets/logo_small.svg";
@@ -101,7 +98,18 @@ const Menu = (props) => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      {props.authorized && <MenuItem onClick={signOut}>Wyloguj</MenuItem>}
+      {props.authorized ? (
+        <MenuItem onClick={signOut}>Wyloguj</MenuItem>
+      ) : (
+        <>
+          <MenuItem>
+            <Link to="/login">Zaloguj się</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to="/register">Zarejestruj się</Link>
+          </MenuItem>
+        </>
+      )}
     </MenuMUI>
   );
 
@@ -122,25 +130,10 @@ const Menu = (props) => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+      <MenuItem className={styles.link}>
+        <Link to="/categories">
+          <p>Posty</p>
+        </Link>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -161,15 +154,6 @@ const Menu = (props) => {
     <>
       <AppBar position="sticky" sx={{ top: 0 }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
           <img className={styles.logo} src={logo} alt="logo" />
           <Search>
             <SearchIconWrapper>
@@ -180,26 +164,13 @@ const Menu = (props) => {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          <MenuItem className={styles.link}>
+            <Link to="/categories">
+              <p>Posty</p>
+            </Link>
+          </MenuItem>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
             <IconButton
               size="large"
               edge="end"

@@ -6,6 +6,7 @@ import Input from "../../../components/Input/Input.jsx";
 import Alerts from "../../../components/Alerts/Alerts.jsx";
 import useRegister from "../hooks/useRegister";
 import styles from "./login.module.css";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [formValues, setFormValues] = useState({
@@ -131,6 +132,12 @@ const Register = () => {
             >
               ZAREJESTRUJ SIĘ
             </Button>
+          </Grid>
+          <Grid container item gap={1} justifyContent="center">
+            <Typography variant="subtitle1">Masz już konto?</Typography>
+            <Typography variant="subtitle1">
+              <Link to="/login">Zaloguj się</Link>
+            </Typography>
           </Grid>
         </Grid>
       </Grid>

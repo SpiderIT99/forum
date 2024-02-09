@@ -1,3 +1,8 @@
 .logo {
   max-height: 50px;
 }
+
+.link a{
+  color: #ffffff;
+  text-decoration: none;
+}

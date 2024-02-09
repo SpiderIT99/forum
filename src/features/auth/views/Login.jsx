@@ -7,6 +7,7 @@ import Input from "../../../components/Input/Input.jsx";
 import Alerts from "../../../components/Alerts/Alerts.jsx";
 import { useSignIn } from "../hooks/useSignIn.js";
 import styles from "./login.module.css";
+import {Link} from "react-router-dom";
 
 const Login = () => {
   const username = localStorage.getItem("username") || "";
@@ -108,6 +109,12 @@ const Login = () => {
             >
               ZALOGUJ SIĘ
             </Button>
+            <Grid container item gap={1} justifyContent="center">
+              <Typography variant="subtitle1">Nie masz konta?</Typography>
+              <Typography variant="subtitle1">
+                <Link to="/register">Zarejestruj się</Link>
+              </Typography>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

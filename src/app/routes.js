@@ -23,23 +23,25 @@ const ProtectedRoute = ({ redirectPath = "/login" }) => {
   return <Navigate to={redirectPath} replace />;
 };
 
-const PublicRoute = ({ redirectPath = "/categories" }) => {
-  const user = useAppSelector(selectUser);
-
-  if (user) {
-    return <Navigate to={redirectPath} replace />;
-  }
-  return (
-    <Layout>
-      <Outlet />
-      <Alerts />
-    </Layout>
-  );
-};
+const PublicRoute = () => (
+  <Layout>
+    <Outlet />
+    <Alerts />
+  </Layout>
+);
 
 export const routes = [
   {
     element: <ProtectedRoute />,
+    children: [
+      {
+        path: "/create-post",
+        element: <CreatePostPage />,
+      },
+    ],
+  },
+  {
+    element: <PublicRoute />,
     children: [
       {
         path: "/",
@@ -52,19 +54,6 @@ export const routes = [
       {
         path: "/post/:postId",
         element: <PostPage />,
-      },
-      {
-        path: "/create-post",
-        element: <CreatePostPage />,
-      },
-    ],
-  },
-  {
-    element: <PublicRoute />,
-    children: [
-      {
-        path: "/",
-        element: <Login />,
       },
       {
         path: "/login",
