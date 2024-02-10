@@ -85,11 +85,11 @@ const Register = () => {
           <Avatar>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography variant="h4">Rejestracja</Typography>
+          <Typography variant="h4">Sign up</Typography>
           <Grid component="form" onSubmit={handleSubmit} container gap={3}>
             <Input
               id="username"
-              label="Nazwa użytkownika"
+              label="Username"
               value={formValues.username}
               onChange={handleValueChange}
               autocomplete="username"
@@ -105,7 +105,7 @@ const Register = () => {
             />
             <Input
               id="password"
-              label="Hasło"
+              label="Password"
               type="password"
               value={formValues.password}
               onChange={handleValueChange}
@@ -116,7 +116,7 @@ const Register = () => {
               customValidation={validatePassword}
               disabled={!Boolean(formValues.password)}
               id="confirmPassword"
-              label="Powtórz hasło"
+              label="Confirm password"
               type="password"
               value={formValues.confirmPassword}
               onChange={handleValueChange}
@@ -130,13 +130,13 @@ const Register = () => {
               fullWidth
               disableElevation
             >
-              ZAREJESTRUJ SIĘ
+              SIGN UP
             </Button>
           </Grid>
           <Grid container item gap={1} justifyContent="center">
-            <Typography variant="subtitle1">Masz już konto?</Typography>
+            <Typography variant="subtitle1">Already have an account?</Typography>
             <Typography variant="subtitle1">
-              <Link to="/login">Zaloguj się</Link>
+              <Link to="/login">Sign in</Link>
             </Typography>
           </Grid>
         </Grid>

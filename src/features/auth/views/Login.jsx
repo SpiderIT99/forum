@@ -74,11 +74,11 @@ const Login = () => {
           <Avatar>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography variant="h4">Logowanie</Typography>
+          <Typography variant="h4">Sign in</Typography>
           <Grid component="form" onSubmit={handleSubmit} container gap={3}>
             <Input
               id="username"
-              label="Nazwa użytkownika"
+              label="Username"
               value={formValues.username}
               onChange={handleValueChange}
               autocomplete="username"
@@ -86,7 +86,7 @@ const Login = () => {
             />
             <Input
               id="password"
-              label="Hasło"
+              label="Password"
               type="password"
               value={formValues.password}
               onChange={handleValueChange}
@@ -95,7 +95,7 @@ const Login = () => {
             />
             <Checkbox
               id="rememberMe"
-              label="Zapamiętaj mnie"
+              label="Remember me"
               value={formValues.rememberMe}
               onChange={handleValueChange}
             />
@@ -107,12 +107,12 @@ const Login = () => {
               fullWidth
               disableElevation
             >
-              ZALOGUJ SIĘ
+              SIGN IN
             </Button>
             <Grid container item gap={1} justifyContent="center">
-              <Typography variant="subtitle1">Nie masz konta?</Typography>
+              <Typography variant="subtitle1">Don't have an account yet?</Typography>
               <Typography variant="subtitle1">
-                <Link to="/register">Zarejestruj się</Link>
+                <Link to="/register">Sign up</Link>
               </Typography>
             </Grid>
           </Grid>

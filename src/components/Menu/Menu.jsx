@@ -99,14 +99,14 @@ const Menu = (props) => {
       onClose={handleMenuClose}
     >
       {props.authorized ? (
-        <MenuItem onClick={signOut}>Wyloguj</MenuItem>
+        <MenuItem onClick={signOut}>Sign out</MenuItem>
       ) : (
         <>
           <MenuItem>
-            <Link to="/login">Zaloguj się</Link>
+            <Link to="/login">Sign in</Link>
           </MenuItem>
           <MenuItem>
-            <Link to="/register">Zarejestruj się</Link>
+            <Link to="/register">Sign up</Link>
           </MenuItem>
         </>
       )}
@@ -132,7 +132,7 @@ const Menu = (props) => {
     >
       <MenuItem className={styles.link}>
         <Link to="/categories">
-          <p>Posty</p>
+          <p>Posts</p>
         </Link>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
@@ -166,7 +166,7 @@ const Menu = (props) => {
           </Search>
           <MenuItem className={styles.link}>
             <Link to="/categories">
-              <p>Posty</p>
+              <p>Posts</p>
             </Link>
           </MenuItem>
           <Box sx={{ flexGrow: 1 }} />
